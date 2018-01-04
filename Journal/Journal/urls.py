@@ -16,8 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from entries import views
+from django.conf.urls import url
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('',views.Homepage,name='home')
+    url('admin/', admin.site.urls),
+    url(r'^$',views.Homepage,name='home'),
+    url(r'^create',views.CreateEntry,name='create_entry'),
 ]

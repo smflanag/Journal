@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!--{% load staticfiles %}-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,6 +8,7 @@
 
 </head>
 <body>
+
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -17,19 +19,22 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Brand</a>
+      <a class="navbar-brand" href="{% url 'home' %}">Journal</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#">Login</a></li>
+          <li><a href="{% url 'create_entry' %}">Create Post</a></li>
         <li><a href="#">Contact Us</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-<div class="jumbotron container"><h1>This is the home page.</h1></div>
+{% block body_block %}
 
+<div class="jumbotron container"><h1>This is the home page.</h1></div>
+{% endblock %}
 </body>
 </html>
