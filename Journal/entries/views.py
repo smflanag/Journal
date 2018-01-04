@@ -8,3 +8,7 @@ def Homepage(request):
 def CreateEntry(request):
     template_name = 'create_entry'
     return render(request, 'create_entry.html')
+
+def Login(request):
+    template_name = 'login'
+    return render(request, 'login.html')

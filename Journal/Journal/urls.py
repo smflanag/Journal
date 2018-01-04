@@ -22,4 +22,5 @@ urlpatterns = [
     url('admin/', admin.site.urls),
     url(r'^$',views.Homepage,name='home'),
     url(r'^create',views.CreateEntry,name='create_entry'),
+    url(r'^login',views.Login,name='login'),
 ]
