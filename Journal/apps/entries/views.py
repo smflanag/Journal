@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views import View
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView
 from django.urls import reverse_lazy
 
@@ -13,11 +13,6 @@ def Homepage(request):
     template_name = 'home'
     post_list_context = {'post_list':Post.objects.all()}
     return render(request, 'home.html', context=post_list_context)
-
-
-# def CreateEntry(request):
-#     template_name = 'create_entry'
-#     return render(request, 'create_entry.html')
 
 
 def Login(request):
@@ -44,3 +39,9 @@ class PostList(ListView):
     redirect_url = 'home.html'
     form_class = PostForm
     model = Post
+
+
+class PostDetail(DetailView):
+    model = Post
+    # redirect_url = 'post_detail'
+    # post_detail_context = {'post_detail': Post.objects.all()}

@@ -1,0 +1,9 @@
+{% extends "home.html" %}
+
+{% block body_block %}
+<div class="container">
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.post_content }}</p>
+    <p>{{ post.poster_name }}</p>
+</div>
+{% endblock %}

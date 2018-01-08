@@ -25,6 +25,7 @@ urlpatterns = [
     url(r'^$',views.Homepage,name='home'),
     url(r'^create',views.PostCreate.as_view(),name='post_form'),
     url(r'^postlist',views.PostList.as_view(),name='post_list'),
+    url(r'^post/(?P<pk>\d+)$', views.PostDetail.as_view(),name='post_detail'),
     url(r'^login',views.Login,name='login'),
     url(r'^thanks',views.Thanks,name='thanks'),
     url(r'^contact_us',views.ContactUs,name='contact_us'),
