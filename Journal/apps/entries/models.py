@@ -15,11 +15,13 @@ class Post(models.Model):
     poster_name = models.CharField(max_length=20)
     title = models.CharField(max_length=50)
     post_content = models.CharField(max_length=500,default='SOME STRING')
-    # redirect_url = 'post_list.html'
-    # def get_absolute_url(self):
-    #     return reverse("post_list", kwargs={'pk': self.pk})
+    created = models.DateTimeField(auto_now_add=True)
+
     def get_absolute_url(self):
         return reverse('home')
 
     def __str__(self):
         return self.title
+
+    class Meta:
+        ordering = ['-created']

@@ -39,9 +39,8 @@ class PostList(ListView):
     redirect_url = 'home.html'
     form_class = PostForm
     model = Post
+    # queryset = Post.objects.order_by('-created')
 
 
 class PostDetail(DetailView):
     model = Post
-    # redirect_url = 'post_detail'
-    # post_detail_context = {'post_detail': Post.objects.all()}
