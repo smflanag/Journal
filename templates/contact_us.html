@@ -3,9 +3,9 @@
 {% block body_block %}
 <div class="jumbotron container">
     <h2>Contact Us</h2>
-    <form action="/screen_name/" method="POST">
+    <form method="POST">
         {% csrf_token %}
-        {{ form }}
+        {{ form.as_p }}
         <input type="submit" value="Submit" />
     </form>
 </div>

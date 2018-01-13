@@ -12,7 +12,6 @@ class User(models.Model):
 
 
 class Post(models.Model):
-    poster_name = models.CharField(max_length=20)
     title = models.CharField(max_length=50)
     post_content = models.CharField(max_length=500,default='SOME STRING')
     created = models.DateTimeField(auto_now_add=True)
@@ -25,3 +24,11 @@ class Post(models.Model):
 
     class Meta:
         ordering = ['-created']
+
+
+class Contact(models.Model):
+    contact_name = models.CharField(max_length=50)
+    contact_email = models.EmailField(max_length=50)
+
+    def get_absolute_url(self):
+        return reverse('thanks')
